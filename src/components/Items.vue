@@ -1,7 +1,7 @@
 <template>
   <div>
 
-   <AddItem :text="test" :itemDetails="newitem" @increase="increaseitem"/>
+   <AddItem :text="test" :itemDetails="newitem" @passingTitle="passTitle" @increase="increaseitem"/>
 
     <ul class="items">
       <li 
@@ -12,7 +12,7 @@
         {{ item.name }}
 
         <LikeButton/>
-        
+
         <RemoveItem @remove="removeItem(index)" />
 
       </li>
@@ -41,7 +41,8 @@ export default {
         { name: 'The Hacker' , id:2} 
       ],
       newitem: "",
-      test: 'hi'
+      test: 'hi',
+      title: 'mytitle'
     }
   },
   methods: {
@@ -50,7 +51,11 @@ export default {
     },
       increaseitem() {
       this.items.push({name: this.newitem});
-      this.newitem= ""
+      this.newitem= "";
+    },
+    passTitle(title)
+    {
+      this.title=title;
     },
   }
 }

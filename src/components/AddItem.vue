@@ -2,7 +2,7 @@
   <div>
     <form>
       {{ newitem }}
-      <input v-model="newitem" @keyup.enter="increaseitem">
+      <input v-model="newitem" @keyup.enter="increaseitem" @click="$emit('passingTitle')">
 
       <button @click.prevent="increaseitem" @click="$emit('increase')">
           insert
@@ -28,10 +28,13 @@ export default {
   data() {
     return {
       parentData: this.$parent.items,
+      newitem: ""
     }
   },
   methods: {
-  
+  // passEvent() {
+  //   this.$emit('changeTitle','newitem')
+  //   }
   }
 }
 </script>
