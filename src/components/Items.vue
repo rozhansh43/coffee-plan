@@ -28,7 +28,6 @@ export default {
   props: ['items'],
     data () {
     return {
-      newitem: ""
     }
   },
   methods: {
