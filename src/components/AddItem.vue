@@ -8,10 +8,6 @@
           insert
       </button>
 
-      <p>
-        {{ text }}
-      </p>
-
       <!-- <ul>
         <li v-for="item in items" :key="item.id">
         {{ parentData.name }}
