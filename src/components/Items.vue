@@ -1,7 +1,7 @@
 <template>
   <div>
 
-   <AddItem :text="test" :itemDetails="newitem" @passingTitle="passTitle" @increase="increaseitem"/>
+   <AddItem :text="test" :itemDetails="newitem" @increase="increaseitem"/>
 
     <ul class="items">
       <li 
@@ -53,10 +53,7 @@ export default {
       this.items.push({name: this.newitem});
       this.newitem= "";
     },
-    passTitle(title)
-    {
-      this.title=title;
-    },
+
   }
 }
 </script>
