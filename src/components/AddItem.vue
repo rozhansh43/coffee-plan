@@ -20,7 +20,7 @@
 
 <script>
 export default {
-  props: ['items','newitem'],
+  props: ['newitem'],
   data() {
     return {
       // parentData: this.$parent.items,

@@ -1,6 +1,5 @@
 <template>
   <div class="items">
-
     <ul class="ite">
       <li 
       v-for="item in items" 
@@ -14,7 +13,6 @@
         <remove-item @remove="removeItem(index)" />
       </li>
     </ul>
-
   </div>
 </template>
 

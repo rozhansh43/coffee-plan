@@ -9,7 +9,7 @@
           we travel the world
       </h2>
 
-      <add-item  :items="items" @increase="increaseitem" :newitem="newitem"/>
+      <add-item  @increase="increaseitem" :newitem="newitem"/>
 
       <items :items="items"/>
     </div>
