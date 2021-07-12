@@ -10,7 +10,7 @@
       </h2>
 
       <add-item @increase="increaseitem" :newitem="newitem"/>
-
+      {{ newitem }}
       <items :items="items"/>
     </div>
   </div>
@@ -38,8 +38,8 @@ export default {
   },
   methods: {
     increaseitem () {
-      this.items.push({name: this.$emit.newitem});
-      this.$emit.newitem= "";
+      this.items.push({name: this.newitem});
+      this.newitem= "";
     },
   }
 }
