@@ -20,16 +20,14 @@
 
 <script>
 export default {
-  props: ['items'],
   data() {
     return {
       // parentData: this.$parent.items,
       newitem: ""
-
     }
   },
   methods: {
-     emitAdd () {
+    emitAdd () {
        this.$emit('increase', this.newitem)
        this.newitem= "";
     },

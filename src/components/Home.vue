@@ -9,8 +9,8 @@
           we travel the world
       </h2>
 
-      <add-item :newitem="newitem" @increase="increaseitem" :items="items" />
-      {{ newitem }}
+      <add-item @increase="increaseitem" />
+
       <items :items="items"/>
     </div>
   </div>
@@ -37,7 +37,7 @@ export default {
     }
   },
   methods: {
-    increase() {
+    increaseitem() {
       this.items.push({name:this.newitem});
     }
   }
