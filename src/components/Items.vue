@@ -49,7 +49,7 @@ export default {
     removeItem: function (index) {
       this.items.splice(index, 1);
     },
-      increaseitem() {
+    increaseitem() {
       this.items.push({name: this.newitem});
       this.newitem= "";
     },
