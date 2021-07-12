@@ -1,10 +1,10 @@
 <template>
   <div class="add-item">
-    <form>
+    <form @submit="emitAdd">
       {{ newitem }}
       <input v-model="newitem" @keyup.enter="increaseitem">
 
-      <button @click.prevent="increaseitem" @click="$emit('increase')">
+      <button type="submit">
           insert
       </button>
 
@@ -24,12 +24,13 @@ export default {
   data() {
     return {
       // parentData: this.$parent.items,
+      newitem: 0,
     }
   },
   methods: {
-     increaseitem () {
-      this.items.push({name:this.newitem});
-      this.newitem= "";
+     emitAdd () {
+       this.$emit('increase', newitem)
+       this.newitem= "";
     },
   }
 }

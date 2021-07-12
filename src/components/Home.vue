@@ -34,8 +34,14 @@ export default {
         { name:'The Curious' , id:1},
         { name: 'The Hacker' , id:2} 
       ],
+      newitem: 0,
     }
   },
+  methods: {
+    increase() {
+      this.items.push({name:this.newitem});
+    }
+  }
 }
 </script>
 
