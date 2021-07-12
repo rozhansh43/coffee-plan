@@ -28,7 +28,7 @@ export default {
   },
   methods: {
      increaseitem () {
-      this.items.push({name: this.newitem});
+      this.items.push({name:this.newitem});
       this.newitem= "";
     },
   }
