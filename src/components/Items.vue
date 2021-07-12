@@ -1,9 +1,8 @@
 <template>
-  <div>
+  <div class="items">
+    <add-item :itemDetails="newitem" @increase="increaseitem"/>
 
-   <AddItem :text="test" :itemDetails="newitem" @increase="increaseitem"/>
-
-    <ul class="items">
+    <ul class="ite">
       <li 
       v-for="item in items" 
       :key="item.id"
@@ -11,13 +10,11 @@
       >
         {{ item.name }}
 
-        <LikeButton/>
+        <like-button/>
 
-        <RemoveItem @remove="removeItem(index)" />
-
+        <remove-item @remove="removeItem(index)" />
       </li>
     </ul>
-
   </div>
 </template>
 
@@ -25,7 +22,6 @@
 import LikeButton from '@/components/LikeButton'
 import RemoveItem from '@/components/RemoveItem'
 import AddItem from '@/components/AddItem'
-
 
 export default {
   components: {
@@ -46,12 +42,12 @@ export default {
     }
   },
   methods: {
-    removeItem: function (index) {
-      this.items.splice(index, 1);
+    removeItem (index) {
+      this.items.splice(index, 1)
     },
-    increaseitem() {
+    increaseitem () {
       this.items.push({name: this.newitem});
-      this.newitem= "";
+      this.newitem= ""
     },
 
   }

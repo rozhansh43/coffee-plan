@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="like-button">
     <button type="text" @click="likeCounter">
        {{ like }}
     </button> 

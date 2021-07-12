@@ -1,25 +1,17 @@
 <template>
   <div>
-
     <div class="content">
       <h1 class="title">
           Coffee plans
       </h1>
 
-      <p>
-        {{ like }}
-      </p>
-
       <h2 class="subtitle">
           we travel the world
       </h2>
-    
-      <Items />
 
-      </div>
 
-    <!-- <new v-model="model" @add="add"/>
-    <items :value="items"/> -->
+      <items/>
+    </div>
   </div>
 </template>
 
@@ -27,26 +19,22 @@
 import Items from '@/components/Items'
 
 export default {
-  components: {
-    Items,
-
-  },
   name: 'Home',
+  components: {
+    Items
+  },
   data () {
     return { 
-      // Items
       model: {
         id: null,
         name: null
-      },
+      }
     }
   },
 }
 </script>
 
-
 <style>
-
 body {
     height: 100vh;
     -webkit-font-smoothing: auto;
@@ -55,10 +43,9 @@ body {
     -moz-osx-font-smoothing: grayscale;
     font-family: Roboto, sans-serif;
     background-color: #ccdcdc;
-    background-image: url("coffee.jpg");
+    /* background-image: url("./assets/coffee.jpg"); */
     background-repeat: no-repeat;
     background-position: 100% 100%;
     text-align: center;
 }
-
 </style>

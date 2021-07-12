@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="remove-item">
     <button @click="$emit('remove')">
       delete
     </button>

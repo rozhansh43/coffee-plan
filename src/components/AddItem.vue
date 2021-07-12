@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="add-item">
     <form>
       {{ newitem }}
       <input v-model="newitem" @keyup.enter="increaseitem">
