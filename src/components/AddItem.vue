@@ -12,11 +12,11 @@
         {{ text }}
       </p>
 
-      <ul>
+      <!-- <ul>
         <li v-for="item in items" :key="item.id">
-      {{ parentData.name }}
+        {{ parentData.name }}
         </li>
-      </ul>
+      </ul> -->
       
     </form>
   </div>
@@ -24,11 +24,10 @@
 
 <script>
 export default {
-  props: ['itemDetails','text'],
+  props: ['items','newitem'],
   data() {
     return {
-      parentData: this.$parent.items,
-      newitem: ""
+      // parentData: this.$parent.items,
     }
   },
   methods: {

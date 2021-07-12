@@ -1,0 +1,46 @@
+body {
+  height: 100vh;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Roboto, sans-serif;
+  background-color: #ccdcdc;
+  /* background-image: url("./assets/coffee.jpg"); */
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  text-align: center;
+}
+.items {
+  padding: 0 40px;
+  margin-bottom: 40px
+}
+
+button{
+  background-color: rgb(170, 136, 104);
+  border-radius: 10px;
+  color: #fff;
+  padding: 10px;
+  border:none;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  margin: 10px;
+
+}
+.items .item {
+  background-color: #fff;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  list-style-type: none;
+  padding: 20px 20px;
+  border-radius: 10px;
+}

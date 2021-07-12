@@ -9,43 +9,40 @@
           we travel the world
       </h2>
 
+      <add-item  :items="items" @increase="increaseitem" :newitem="newitem"/>
 
-      <items/>
+      <items :items="items"/>
     </div>
   </div>
 </template>
 
 <script>
 import Items from '@/components/Items'
+import AddItem from '@/components/AddItem'
+
 
 export default {
   name: 'Home',
   components: {
-    Items
+    Items,
+    AddItem
   },
   data () {
     return { 
-      model: {
-        id: null,
-        name: null
-      }
+      items: [
+        { name:'The Addict' , id:0}, 
+        { name:'The Curious' , id:1},
+        { name: 'The Hacker' , id:2} 
+      ],
+      newitem: ""
     }
   },
+  methods: {
+    increaseitem () {
+      this.items.push({name: this.newitem});
+      this.newitem= ""
+    },
+  }
 }
 </script>
 
-<style>
-body {
-    height: 100vh;
-    -webkit-font-smoothing: auto;
-    -moz-osx-font-smoothing: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: Roboto, sans-serif;
-    background-color: #ccdcdc;
-    /* background-image: url("./assets/coffee.jpg"); */
-    background-repeat: no-repeat;
-    background-position: 100% 100%;
-    text-align: center;
-}
-</style>
