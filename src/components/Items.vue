@@ -11,8 +11,8 @@
       >
         {{ item.name }}
 
-
         <LikeButton/>
+        
         <RemoveItem @remove="removeItem(index)" />
 
       </li>
