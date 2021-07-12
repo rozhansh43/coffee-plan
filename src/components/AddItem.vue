@@ -24,13 +24,12 @@ export default {
   data() {
     return {
       // parentData: this.$parent.items,
-      newitem: 0,
     }
   },
   methods: {
      emitAdd () {
-       this.$emit('increase', newitem)
-       this.newitem= "";
+      //  this.$emit('increase', newitem)
+      //  this.newitem= "";
     },
   }
 }

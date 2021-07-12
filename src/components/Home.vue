@@ -39,7 +39,7 @@ export default {
   },
   methods: {
     increase() {
-      this.items.push({name:this.newitem});
+      // this.items.push({name:this.newitem});
     }
   }
 }
