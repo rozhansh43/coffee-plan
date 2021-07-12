@@ -28,8 +28,8 @@ export default {
   },
   methods: {
      emitAdd () {
-      //  this.$emit('increase', newitem)
-      //  this.newitem= "";
+       this.$emit('increase', newitem)
+       this.newitem= "";
     },
   }
 }

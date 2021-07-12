@@ -9,7 +9,7 @@
           we travel the world
       </h2>
 
-      <add-item :newitem="newitem" :items="items"/>
+      <add-item :newitem="newitem" @increase="increaseitem" :items="items"/>
       {{ newitem }}
       <items :items="items"/>
     </div>
@@ -34,12 +34,12 @@ export default {
         { name:'The Curious' , id:1},
         { name: 'The Hacker' , id:2} 
       ],
-      newitem: 0,
+      newitem: "",
     }
   },
   methods: {
     increase() {
-      // this.items.push({name:this.newitem});
+      this.items.push({name:this.newitem});
     }
   }
 }
