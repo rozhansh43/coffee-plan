@@ -1,6 +1,6 @@
 <template>
   <div class="add-item">
-    <form @submit="emitAdd">
+    <form @submit.prevent="emitAdd">
       {{ newitem }}
       <input v-model="newitem" @keyup.enter="increaseitem">
 
@@ -20,15 +20,17 @@
 
 <script>
 export default {
-  props: ['newitem','items'],
+  props: ['items'],
   data() {
     return {
       // parentData: this.$parent.items,
+      newitem: ""
+
     }
   },
   methods: {
      emitAdd () {
-       this.$emit('increase', newitem)
+       this.$emit('increase', this.newitem)
        this.newitem= "";
     },
   }

@@ -12,10 +12,5 @@ export default {
     return {
     }
   },
-  methods: {
-    // removeItem: function (index) {
-    // this.items.splice(index, 1);
-    // },
-  }
 }
 </script>

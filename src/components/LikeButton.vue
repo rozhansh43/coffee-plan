@@ -10,11 +10,11 @@
 export default {
   data() {
     return {
-    like: 0,
+      like: 0,
     }
   },
   methods: {
-      likeCounter() {
+    likeCounter() {
       this.like ++
     },
   },
