@@ -1,39 +1,34 @@
 <template>
   <div class="items">
-    <ul class="ite">
-      <li 
-      v-for="item in items" 
-      :key="item.id"
-      class="item"
-      >
+    <ul>
+      <li v-for="item in items" :key="item.id" class="item">
         {{ item.name }}
 
-        <like-button/>
+        <button @click="like(item)">
+          Like ({{ item.likeCount }})
+        </button> 
 
-        <remove-item @remove="removeItem(index)" />
+        <button @click="remove(item.id)">
+          Remove
+        </button>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import LikeButton from '@/components/LikeButton'
-import RemoveItem from '@/components/RemoveItem'
-
 export default {
-  components: {
-    LikeButton,
-    RemoveItem,
-  },
-  props: ['items'],
-    data () {
-    return {
-    }
+  props: {
+    items: { type: Array, default: () => [] }
   },
   methods: {
-    removeItem (index) {
-      this.items.splice(index, 1)
+    like (item) {
+      item.likeCount = item.likeCount + 1
     },
+    remove (itemId) {
+      if (confirm('Are you sure?'))
+        this.$emit('remove', itemId)
+    }
   }
 }
 </script>

@@ -1,36 +1,27 @@
 <template>
-  <div class="add-item">
+  <div>
     <form @submit.prevent="emitAdd">
-      {{ newitem }}
-      <input v-model="newitem" @keyup.enter="increaseitem">
+      <input v-model="name">
 
       <button type="submit">
-          insert
+        Add
       </button>
-
-      <!-- <ul>
-        <li v-for="item in items" :key="item.id">
-        {{ parentData.name }}
-        </li>
-      </ul> -->
-      
     </form>
   </div>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
-      // parentData: this.$parent.items,
-      newitem: ""
+      name: null
     }
   },
   methods: {
     emitAdd () {
-       this.$emit('increase', this.newitem)
-       this.newitem= "";
-    },
+       this.$emit('add', this.name)
+       this.name = null
+    }
   }
 }
 </script>

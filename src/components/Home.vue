@@ -2,16 +2,16 @@
   <div>
     <div class="content">
       <h1 class="title">
-          Coffee plans
+        Coffee plans
       </h1>
 
       <h2 class="subtitle">
-          we travel the world
+        we travel the world
       </h2>
 
-      <add-item @increase="increaseitem" />
+      <add-item @add="add" />
 
-      <items :items="items"/>
+      <items :items="items" @remove="remove"/>
     </div>
   </div>
 </template>
@@ -19,7 +19,6 @@
 <script>
 import Items from '@/components/Items'
 import AddItem from '@/components/AddItem'
-
 
 export default {
   name: 'Home',
@@ -29,16 +28,19 @@ export default {
   },
   data () {
     return { 
-      items: [
-        { name:'The Addict' , id:0}, 
-        { name:'The Curious' , id:1},
-        { name: 'The Hacker' , id:2} 
-      ],
+      items: []
     }
   },
   methods: {
-    increaseitem() {
-      this.items.push({name:this.newitem});
+    add (name) {
+      this.items.push({
+        id: String(Math.floor(Math.random() * 999999999)),
+        name,
+        likeCount: 0
+      })
+    },
+    remove (itemId) {
+      this.items = this.items.filter(o => o.id !== itemId)
     }
   }
 }
